@@ -1,0 +1,6 @@
+{
+  "name": "SmartLJK AI - Pembuat & Pemeriksa LJK Otomatis",
+  "description": "Aplikasi Pembuat LJK dengan Anchor Markers, OMR Scanner multi-tipe soal, dan AI Vision OCR untuk koreksi otomatis tulisan tangan terintegrasi Neon PostgreSQL.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
