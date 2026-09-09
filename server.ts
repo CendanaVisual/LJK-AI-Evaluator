@@ -371,9 +371,8 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`SmartLJK AI Server running at http://0.0.0.0:${PORT}`);
-  });
+  // app.listen(...) dihapus/dikomentari
+export default app;
 }
 
 startServer();
