@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 6mm;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print, header, footer, nav, button, [role="tablist"], input, select {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Printable LJK Sheet */
+  .printable-sheet {
+    display: block !important;
+    position: relative !important;
+    box-shadow: none !important;
+    border: 1.5px solid #000000 !important;
+    width: 100% !important;
+    max-width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Printable OMR Class Recapitulation */
+  .printable-omr-recap {
+    display: block !important;
+    width: 100% !important;
+    max-width: 210mm !important;
+    margin: 0 auto !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 10px !important;
+  }
+}
+
+
