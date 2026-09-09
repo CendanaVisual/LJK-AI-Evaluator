@@ -371,8 +371,8 @@ async function startServer() {
     });
   }
 
-  // app.listen(...) dihapus/dikomentari
-export default app;
+  // @ts-ignore
+module.exports = app;
 }
 
 startServer();
