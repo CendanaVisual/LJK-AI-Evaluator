@@ -89,22 +89,28 @@ Aplikasi web modern terintegrasi untuk SD Negeri 7 Pedungan yang memudahkan guru
    ```
    Buka browser di: `http://localhost:3000`
 
-5. **(Opsional) Menjalankan Backend Python FastAPI:**
-   ```bash
-   cd python_backend
-   pip install -r requirements.txt
-   uvicorn main:app --reload --port 8000
-   ```
+5. **Deploy ke Vercel (100% Serverless Ready):**
+   - Import repositori GitHub Anda ke **Vercel**.
+   - Vercel secara otomatis mendeteksi konfigurasi `vercel.json` dan folder `api/` (Serverless Functions).
+   - Tambahkan Environment Variables di Vercel Dashboard (*Settings -> Environment Variables*):
+     - `DATABASE_URL`: Connection string PostgreSQL (Neon DB).
+     - `GEMINI_API_KEY`: API Key Gemini Anda.
+   - Klik **Deploy**. Aplikasi langsung aktif secara instan dengan routing API serverless murni.
 
 ---
 
 ## 📁 Struktur Direktori
 
 ```text
+├── api/                    # Vercel Serverless Function Endpoints
+│   ├── index.ts            # Entrypoint Serverless Vercel (Express /api/* routes)
+│   └── db-status.ts        # Endpoint mandiri status database Neon
+├── vercel.json             # Konfigurasi routing rewrite resmi Vercel
 ├── index.html              # Entry point HTML aplikasi
 ├── metadata.json           # Metadata aplikasi AI Studio
 ├── package.json            # Daftar pustaka Node.js & script
-├── server.ts               # Server Express & middleware Vite
+├── server.ts               # Server Express lokal / dev & Cloud Run
+├── server/                 # Logika modul backend (DB, OMR, AI, Excel)
 ├── .env.example            # Template variabel lingkungan
 ├── python_backend/         # Modul mandiri FastAPI & OpenCV
 │   ├── main.py             # Endpoint API FastAPI
